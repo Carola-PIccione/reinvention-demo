@@ -2608,7 +2608,7 @@ body.client-mode li[data-s="overview"]{display:none}
         <li data-s="execblueprint"><span class="sd prog"></span><span class="nl" id="nlExec">Client Decision Hub</span></li>
         <li data-s="om"><span class="sd prog"></span>Operating Model</li>
         <li data-s="ea"><span class="sd prog"></span>Enterprise Architecture</li>
-        <li data-s="fin"><span class="sd done"></span>Financial</li>
+        <li data-s="fin"><span class="sd prog"></span>Financial</li>
       </ul>
       <div class="rail-sec">DELIVERY CONSOLE</div>
       <ul class="nav">
@@ -3096,7 +3096,7 @@ function scBlueprint_procCard(m){
   const hdr=`<div class="bpg-hdr" onclick="bpProcTog(${ci})"><span class="bpg-name" style="flex:0 1 auto;margin-right:8px"><span class="bpg-chev">${open?'&#9662;':'&#9656;'}</span>${ci+1}. ${c.short||c.name}</span><div class="bpg-hbar wide">${exAvg.map((v,i)=>pseg3(v,PACC[i],PACC_L[i])).join('')}</div></div>`;
   let body='';if(open){body=`<div class="bpg-body">${c.l2.map((x,j)=>{const ex=procExecMix(ci,x);const agPct=ex[4];const autoTot=ex[1]+ex[2]+ex[3]+ex[4];return `<div class="bpl2"><div class="nm" title="${x}">${ci+1}.${j+1} ${x}</div><div class="ba">${ex.map((v,i)=>pseg(v,PACC[i])).join('')}</div><div class="tl">${autoTot}% <span style="font-size:9px;color:var(--muted)">auto</span>${agPct>=20?' <span class="ag2">A</span>':''}</div></div>`;}).join('')}</div>`;}
   return `<div class="bpg">${hdr}${body}</div>`;}).join('');
- const procCard=`<div class="bpc">${bh('#3B0A75','&#9881;','Processes','automation')}<div class="bpc-b"><div class="bpc-cap">Automation mix per L2 process &mdash; agentic + automated + manual = 100% &middot; grouped by L1 &middot; expand a group for detail &middot; ${isTo?'target state':'current state'}</div><div style="display:flex;justify-content:flex-end;gap:6px;margin-bottom:7px"><button class="tool" style="padding:3px 9px;font-size:10.5px" onclick="bpProcAll(true)">Expand all</button><button class="tool" style="padding:3px 9px;font-size:10.5px" onclick="bpProcAll(false)">Collapse all</button></div>${procGroups}<div class="bplgd" style="margin-top:10px">${PACC.map((c,i)=>`<span><b style="background:${c}"></b>${PACC_L[i]}</span>`).join('')}<span style="margin-left:auto">avg ${procAvgA}% automated &middot; ${agN} agentic L2</span></div>${edit('om','processes','Open processes')}</div></div>`;
+ const procCard=`<div class="bpc" id="sec-proc">${bh('#3B0A75','&#9881;','Processes','automation')}<div class="bpc-b"><div class="bpc-cap">Automation mix per L2 process &mdash; agentic + automated + manual = 100% &middot; grouped by L1 &middot; expand a group for detail &middot; ${isTo?'target state':'current state'}</div><div style="display:flex;justify-content:flex-end;gap:6px;margin-bottom:7px"><button class="tool" style="padding:3px 9px;font-size:10.5px" onclick="bpProcAll(true)">Expand all</button><button class="tool" style="padding:3px 9px;font-size:10.5px" onclick="bpProcAll(false)">Collapse all</button></div>${procGroups}<div class="bplgd" style="margin-top:10px">${PACC.map((c,i)=>`<span><b style="background:${c}"></b>${PACC_L[i]}</span>`).join('')}<span style="margin-left:auto">avg ${procAvgA}% automated &middot; ${agN} agentic L2</span></div>${edit('om','processes','Open processes')}</div></div>`;
  return procCard;}
 
 function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
@@ -3112,7 +3112,7 @@ function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
  const gOut=outP,rem=100-gOut,gHQ=Math.round(hi/100*rem),gReg=Math.round(near/100*rem),gGlob=rem-gHQ-gReg;
  const C_GLOB='#BBD2F2',C_REG='#4A82E8',C_HQ='#1B47C2',C_OUT='#8E8E97';
  const totL2=BP.capabilities.reduce((s,c)=>s+c.l2.length,0);
- const orgCard=`<div class="bpc">${bh('#7A1FFF','&#9683;','Organization model','')}<div class="bpc-b">
+ const orgCard=`<div class="bpc" id="sec-org">${bh('#7A1FFF','&#9683;','Organization model','')}<div class="bpc-b">
   <div class="bparch" style="cursor:pointer" onclick="openArche()" title="Click to compare archetypes"><span class="al">Operating Model Archetype</span><span class="av">${BP.omType}</span><span style="margin-left:auto;font-size:10px;color:var(--purple-d)">change →</span></div>
   ${orgChartSimple()}
   ${edit('om','organization','Open organization')}</div></div>`;
@@ -3166,7 +3166,7 @@ function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
   const hdr=`<div class="bpg-hdr" onclick="bpProcTog(${ci})"><span class="bpg-name" style="flex:0 1 auto;margin-right:8px"><span class="bpg-chev">${open?'&#9662;':'&#9656;'}</span>${ci+1}. ${c.short||c.name}</span><div class="bpg-hbar wide">${exAvg.map((v,i)=>pseg3(v,PACC[i],PACC_L[i])).join('')}</div></div>`;
   let body='';if(open){body=`<div class="bpg-body">${c.l2.map((x,j)=>{const ex=procExecMix(ci,x);const agPct=ex[4];const autoTot=ex[1]+ex[2]+ex[3]+ex[4];return `<div class="bpl2"><div class="nm" title="${x}">${ci+1}.${j+1} ${x}</div><div class="ba">${ex.map((v,i)=>pseg(v,PACC[i])).join('')}</div><div class="tl">${autoTot}% <span style="font-size:9px;color:var(--muted)">auto</span>${agPct>=20?' <span class="ag2">A</span>':''}</div></div>`;}).join('')}</div>`;}
   return `<div class="bpg">${hdr}${body}</div>`;}).join('');
- const procCard=`<div class="bpc">${bh('#3B0A75','&#9881;','Processes','automation')}<div class="bpc-b"><div class="bpc-cap">Automation mix per L2 process &mdash; agentic + automated + manual = 100% &middot; grouped by L1 &middot; expand a group for detail &middot; ${isTo?'target state':'current state'}</div><div style="display:flex;justify-content:flex-end;gap:6px;margin-bottom:7px"><button class="tool" style="padding:3px 9px;font-size:10.5px" onclick="bpProcAll(true)">Expand all</button><button class="tool" style="padding:3px 9px;font-size:10.5px" onclick="bpProcAll(false)">Collapse all</button></div>${procGroups}<div class="bplgd" style="margin-top:10px">${PACC.map((c,i)=>`<span><b style="background:${c}"></b>${PACC_L[i]}</span>`).join('')}<span style="margin-left:auto">avg ${procAvgA}% automated &middot; ${agN} agentic L2</span></div>${edit('om','processes','Open processes')}</div></div>`;
+ const procCard=`<div class="bpc" id="sec-proc">${bh('#3B0A75','&#9881;','Processes','automation')}<div class="bpc-b"><div class="bpc-cap">Automation mix per L2 process &mdash; agentic + automated + manual = 100% &middot; grouped by L1 &middot; expand a group for detail &middot; ${isTo?'target state':'current state'}</div><div style="display:flex;justify-content:flex-end;gap:6px;margin-bottom:7px"><button class="tool" style="padding:3px 9px;font-size:10.5px" onclick="bpProcAll(true)">Expand all</button><button class="tool" style="padding:3px 9px;font-size:10.5px" onclick="bpProcAll(false)">Collapse all</button></div>${procGroups}<div class="bplgd" style="margin-top:10px">${PACC.map((c,i)=>`<span><b style="background:${c}"></b>${PACC_L[i]}</span>`).join('')}<span style="margin-left:auto">avg ${procAvgA}% automated &middot; ${agN} agentic L2</span></div>${edit('om','processes','Open processes')}</div></div>`;
  /* ---- GOVERNANCE: governance model + bodies & cadence ---- */
  const gMod=(BP.designChoices&&BP.designChoices['Governance'])?BP.designChoices['Governance'].opts[BP.designChoices['Governance'].sel]:'Federated';
  const govDesc={'Centralized':'Central standards, unified decision rights — efficient, less flexible.','Federated':'Central guardrails, devolved delivery decisions — balanced.','Distributed':'Domain-owned decisions, light centre — fast, higher duplication risk.'}[gMod]||'';
@@ -3183,7 +3183,7 @@ function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
  const gaps=BP.architecture.filter(a=>a.status==='missing').length+BP.infrastructure.filter(a=>a.status==='missing').length;
  const redund=BP.architecture.filter(a=>a.apps>=4).length;
  const remTot=BP.architecture.reduce((s,a)=>s+a.rem,0)+BP.infrastructure.reduce((s,a)=>s+a.rem,0);
- const techCard=`<div class="bpc">${bh('#4B3FD8','&#9706;','Tech architecture','88% · ETB')}<div class="bpc-b"><div class="bpc-cap">Reference architecture (ETB) heat map</div><div class="bpheat">${archCells}</div><div class="bplgd" style="margin-top:9px">${ARCH_C.map((c,i)=>`<span><b style="background:${c}"></b>${ARCH_L[i]}</span>`).join('')}</div>
+ const techCard=`<div class="bpc" id="sec-tech">${bh('#4B3FD8','&#9706;','Tech architecture','88% · ETB')}<div class="bpc-b"><div class="bpc-cap">Reference architecture (ETB) heat map</div><div class="bpheat">${archCells}</div><div class="bplgd" style="margin-top:9px">${ARCH_C.map((c,i)=>`<span><b style="background:${c}"></b>${ARCH_L[i]}</span>`).join('')}</div>
   <div class="bpsub">Maturity &middot; redundancy &middot; cost to remediate</div>
   ${br('Modernization (apps / infra)',`${modAvg}% / ${infraAvg}%`)}
   ${br('Tech-debt index',`<b>${m.techDebt}</b>`)}
@@ -3215,7 +3215,7 @@ function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
  const RUNC='#5B5B6B',GROWC='#0891B2',TXC='#A100FF';
  const stk=(lbl,r,g,t,total)=>{const p=v=>Math.round(v/total*100);return `<div class="bpstk"><span class="sl2">${lbl}</span><div class="bpsplit"><i style="width:${p(r)}%;background:${RUNC}">${p(r)>14?fmtM(r):''}</i><i style="width:${p(g)}%;background:${GROWC}">${p(g)>14?fmtM(g):''}</i><i style="width:${p(t)}%;background:${TXC}">${p(t)>14?fmtM(t):''}</i></div></div>`;};
   const fiveYrNet=m.fiveYr!=null?fmtM(m.fiveYr):'—';
- const finCard=`<div class="bpc" style="margin-bottom:16px">${bh('#5B00B5','&#9670;','Financials','95% · fin model')}<div class="bpc-b">
+ const finCard=`<div class="bpc" id="sec-fin" style="margin-bottom:16px">${bh('#5B00B5','&#9670;','Financials','95% · fin model')}<div class="bpc-b">
   <div style="display:grid;grid-template-columns:3fr 1fr;gap:14px;align-items:center">
    <div>
     <div class="bpsub" style="margin-top:0">Current → target: IT spend shift</div>
@@ -3232,7 +3232,8 @@ function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
   </div>
  </div></div>`;
  return `<span class="tag">Design Studio · Technology Reinvention Summary</span><div class="h1">Technology Reinvention Summary</div><div class="sub">All domains on one model \u2014 change anything in a module and it cascades here, live.</div>
- <div class="sc-card"><div class="sc-header"><div class="sc-title">&#127919; Strategic Choices <span class="sc-sub">Tap any choice to explore how it changes the plan — everything updates live. Approve a scenario to share with your Accenture team.</span></div></div><div id="scCardInner">${buildSCGrid()}${buildScenarioBar()}</div></div>
+<div class="bp-index" id="bpIndex"><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-strategic');return false" data-sec="sec-strategic" style="--c:#A100FF"><span class="bp-idx-dot"></span>Strategic Choices</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-fin');return false" data-sec="sec-fin" style="--c:#5B00B5"><span class="bp-idx-dot"></span>Financials</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-org');return false" data-sec="sec-org" style="--c:#7A1FFF"><span class="bp-idx-dot"></span>Organization</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('bp-cap-card');return false" data-sec="bp-cap-card" style="--c:#8A00E6"><span class="bp-idx-dot"></span>Capabilities</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-proc');return false" data-sec="sec-proc" style="--c:#3B0A75"><span class="bp-idx-dot"></span>Processes</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-tech');return false" data-sec="sec-tech" style="--c:#4B3FD8"><span class="bp-idx-dot"></span>Tech Architecture</a></div>
+ <div id="sec-strategic" class="sc-card"><div class="sc-header"><div class="sc-title">&#127919; Strategic Choices <span class="sc-sub">Tap any choice to explore how it changes the plan — everything updates live. Approve a scenario to share with your Accenture team.</span></div></div><div id="scCardInner">${buildSCGrid()}${buildScenarioBar()}</div></div>
 ${finCard}
 <div class="grid g2">${orgCard}${capCard}${procCard}${techCard}${govCard}</div>${phases(2)}`;}
 
@@ -3789,7 +3790,7 @@ function render(){const isC=persona==='client';
  document.getElementById('canvas').innerHTML=cb+back+`<div class="screen">${fnMap[screen]()}</div>`;
  document.getElementById('crumb').textContent=(isC&&screen==='execblueprint')?'Client Overview':crumbs[screen];
  const nlx=document.getElementById('nlExec');if(nlx)nlx.textContent='Client Decision Hub';
- if(screen==='om')omPost();if(screen==='ea')appsUI();buildSugs();syncHeader();setTimeout(mountSliders,0);
+ if(screen==='om')omPost();if(screen==='ea')appsUI();if(screen==='blueprint')setTimeout(bpIndexObserver,0);buildSugs();syncHeader();setTimeout(mountSliders,0);
  if(_lastScreen!==screen){document.getElementById('canvas').scrollTop=0;_lastScreen=screen;}
  if(document.getElementById('mpanel').classList.contains('show'))renderModel();
  renderDecStrip();}
@@ -3828,7 +3829,9 @@ function askQ(q){const th=document.getElementById('thread');th.innerHTML+=`<div 
 document.getElementById('askIn').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.value.trim()){askQ(e.target.value.trim());e.target.value='';}});
 
 /* nav / mode */
-function go(s){screen=s;render();document.querySelectorAll('.nav li').forEach(li=>{const on=li.dataset.s===s;li.classList.toggle('active',on);li.classList.toggle('dl',on&&DELIVER.includes(s));});}
+function bpIdxScroll(id){const el=document.getElementById(id);if(!el)return;const canvas=document.getElementById('canvas');const r=el.getBoundingClientRect(),cr=canvas.getBoundingClientRect();canvas.scrollTo({top:canvas.scrollTop+(r.top-cr.top)-16,behavior:'smooth'});document.querySelectorAll('#bpIndex .bp-idx-item').forEach(a=>a.classList.toggle('active',a.dataset.sec===id));}
+function bpIndexObserver(){const ids=['sec-strategic','sec-fin','sec-org','bp-cap-card','sec-proc','sec-tech'];const items=document.querySelectorAll('#bpIndex .bp-idx-item');if(!items.length)return;const canvas=document.getElementById('canvas');const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)items.forEach(a=>a.classList.toggle('active',a.dataset.sec===e.target.id));});},{root:canvas,threshold:0.1,rootMargin:'-5% 0px -65% 0px'});ids.forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});}
+function go(s){screen=s;render();document.querySelectorAll('.nav li').forEach(li=>{const on=li.dataset.s===s;li.classList.toggle('active',on);li.classList.toggle('dl',on&&DELIVER.includes(s));const sd=li.querySelector('.sd');if(sd){if(on){sd.className='sd done';}else{sd.className=sd.className.replace('done','prog');}}});}
 document.querySelectorAll('.nav li').forEach(li=>li.addEventListener('click',()=>go(li.dataset.s)));
 BP.mode='tobe';
 document.querySelectorAll('#persona button').forEach(b=>b.addEventListener('click',()=>{persona=b.dataset.p;document.querySelectorAll('#persona button').forEach(x=>x.classList.toggle('on',x===b));document.body.classList.toggle('client-mode',persona==='client');if(persona==='client'&&screen==='overview'){go('execblueprint');return;}render();}));
@@ -3877,7 +3880,7 @@ function syncHeader(){const c=document.querySelector('.client');if(c)c.innerHTML
 const pBtn0=document.querySelector('#persona button.on');if(pBtn0)persona=pBtn0.dataset.p;
 document.body.classList.toggle('client-mode',persona==='client');
 if(persona==='client'&&screen==='overview')screen='execblueprint';
-document.querySelectorAll('.nav li').forEach(li=>{const on=li.dataset.s===screen;li.classList.toggle('active',on);li.classList.toggle('dl',on&&DELIVER.includes(screen));});
+document.querySelectorAll('.nav li').forEach(li=>{const on=li.dataset.s===screen;li.classList.toggle('active',on);li.classList.toggle('dl',on&&DELIVER.includes(screen));const sd=li.querySelector('.sd');if(sd){if(on){sd.className='sd done';}else{sd.className=sd.className.replace('done','prog');}}});
 document.getElementById('canvas').addEventListener('scroll',function(){document.getElementById('totop').classList.toggle('show',this.scrollTop>320);});
 /* ===== STRATEGIC CHOICES STRIP ===== */
 var SC_KEYS=['Role of Technology','Business-IT Relationship','Budgeting Model','Funding Source','Organizational Structure','Team Structure','Governance','Architecture','Application Model','Technology Model'];
@@ -3960,8 +3963,8 @@ function buildSCGrid(){
   });
   // Return a placeholder — mountSliders() will fill it after DOM exists
   return '<div id="scSlidersMount"><div class="sc-spec-header"><div></div>'
-    +'<div class="sc-spec-header-lbl"><span style="color:var(--muted)">&#9646; Current State</span>'
-    +'<span style="color:#A100FF;font-weight:700">Future State &#9646;</span></div></div>'
+    +'<div class="sc-spec-header-lbl"><span class="sc-leg-cur"><span class="sc-leg-dot"></span>Current State</span>'
+    +'<span class="sc-leg-fut"><span class="sc-leg-dot"></span>Future State</span></div></div>'
     +'<div class="sc-spectrum-wrap" id="scSpectrumWrap"></div></div>';
 }
 
@@ -4252,7 +4255,12 @@ render();
 /* Current / Future State legend — right-aligned, lighter divider */
 .sc-spec-header{display:flex;justify-content:flex-end;padding:0 0 6px;border-bottom:1px solid #E8E0F5;margin-bottom:6px}
 .sc-spec-header>div:first-child{display:none}
-.sc-spec-header-lbl{display:flex;gap:18px;font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.sc-spec-header-lbl{display:flex;gap:20px;font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;align-items:center}
+.sc-leg-cur,.sc-leg-fut{display:flex;align-items:center;gap:6px}
+.sc-leg-cur{color:#6A6975}
+.sc-leg-fut{color:#A100FF;font-weight:700}
+.sc-leg-cur .sc-leg-dot{width:9px;height:9px;border-radius:50%;background:transparent;border:2px solid #6A6975;flex:none}
+.sc-leg-fut .sc-leg-dot{width:9px;height:9px;border-radius:50%;background:#A100FF;flex:none}
 
 /* ── STRATEGIC CHOICES — RESPONSIVE ──────────────────────────────
    App layout: 236px rail + 312px assist + 52px canvas padding = 600px fixed.
@@ -4305,16 +4313,24 @@ input.sc-range-cur::-webkit-slider-thumb{
   width:11px;height:11px;border-radius:50%;
   background:#8A8A95;
   border:2px solid #fff;
-  box-shadow:0 0 0 1px #8A8A95;
+  box-shadow:0 0 0 2px #5A5A65;
   cursor:default;
 }
 input.sc-range-cur::-moz-range-thumb{
   width:9px;height:9px;border-radius:50%;
   background:#8A8A95;
   border:2px solid #fff;
-  box-shadow:0 0 0 1px #8A8A95;
+  box-shadow:0 0 0 2px #5A5A65;
   cursor:default;
 }
+
+/* ── BLUEPRINT SECTION INDEX ── */
+.bp-index{display:flex;align-items:center;flex-wrap:wrap;gap:2px;padding:10px 0 14px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.bp-idx-sep{color:var(--faint);font-size:11px;padding:0 1px;user-select:none}
+.bp-idx-item{display:flex;align-items:center;gap:5px;padding:4px 10px 4px 7px;border-radius:20px;font-size:10.5px;font-weight:600;color:var(--ink-2);cursor:pointer;text-decoration:none;transition:.15s;border:1px solid transparent;letter-spacing:.01em;white-space:nowrap}
+.bp-idx-item:hover{background:color-mix(in srgb,var(--c) 9%,transparent);color:var(--c);border-color:color-mix(in srgb,var(--c) 22%,transparent)}
+.bp-idx-item.active{background:color-mix(in srgb,var(--c) 11%,transparent);color:var(--c);border-color:color-mix(in srgb,var(--c) 28%,transparent);font-weight:700}
+.bp-idx-dot{width:6px;height:6px;border-radius:50%;background:var(--c);flex:none}
 
 /* ── FINANCIALS KPI COLUMN — compact cards */
 .fin-kpi-col .fin-kpi{padding:7px 11px}

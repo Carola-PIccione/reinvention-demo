@@ -3284,9 +3284,34 @@ function setOrgView(v){orgView=v;render();}
 function setFinTab(v){finTab=v;render();}
 function setCapView(v){capView=v;render();}
 function openComp(s,tab){if(tab){if(s==='om')omTab=tab;if(s==='fin')finTab=tab;}go(s);}
+function scOMWoW(){
+  const dc=BP.designChoices||{};const m=derive();
+  const pick=k=>dc[k]?dc[k].opts[dc[k].sel]:null;
+  const gm=pick('Governance')||'Federated';
+  const os=pick('Organizational Structure')||'Cross-Functional';
+  const rot=pick('Role of Technology')||'Enabler';
+  const govBrief={'Centralized':'Central standards · unified decision rights across all IT','Federated':'Central guardrails · delivery decisions devolved to domains','Distributed':'Domain-owned decisions · light central guardrails only'}[gm]||gm;
+  const decOwner={'Centralized':'CIO','Federated':'CIO + Domain Leads','Distributed':'Domain VPs + Light Centre'}[gm]||'CIO';
+  const decBrief={'Centralized':'All investment & delivery decisions sit with the CIO.','Federated':'CIO owns guardrails & investment; domains own delivery.','Distributed':'Domains own most decisions; centre sets guardrails only.'}[gm]||'';
+  const delivery={'Cross-Functional':'Product & Platform model','Functional':'Project-based (PMO-led)','Product-Led':'Full product model · OKR-driven','Platform-Led':'Platform + stream-aligned teams'}[os]||'Agile Delivery';
+  const teamMod={'Cross-Functional':'Stream-aligned squads with platform support','Functional':'Function-aligned teams, delivery through PMO','Product-Led':'Persistent product teams, dual-track discovery','Platform-Led':'Platform engineers + stream-aligned feature teams'}[os]||'Agile squads';
+  const teamShort=teamMod.split(',')[0];
+  const agile={'Core Differentiator':'Full product ownership · dual-track · continuous discovery','Enabler':'Agile delivery · product management · quarterly OKRs','Utility':'Lean IT · ITIL foundation · selective agile for change'}[rot]||'Agile delivery';
+  const agileShort=agile.split('·')[0].trim();
+  const cell=(ic,lbl,val,sub,col)=>`<div class="gwow-cell"><div class="gwow-icon" style="color:${col}">${ic}</div><div class="gwow-lbl">${lbl}</div><div class="gwow-val">${val}</div><div class="gwow-sub">${sub}</div></div>`;
+  return `<div class="gwow-wrap">
+<div class="gwow-hdr"><span class="gwow-title">Governance &amp; Ways of Working</span><span class="chip ai" style="font-size:9px;margin-left:auto"><span class="d"></span>Shaped by Strategic Choices</span></div>
+<div class="gwow-grid">
+${cell('⬡','Governance model',gm,govBrief,'#7A1FFF')}
+${cell('◈','Decision rights',decOwner,decBrief,'#5B00B5')}
+${cell('▶','Delivery model',delivery,'How investment is executed and shipped','#4B3FD8')}
+${cell('⬢','Team model',teamShort,teamMod,'#8A00E6')}
+${cell('◉','Agile &amp; Product',agileShort,agile,'#3B0A75')}
+${cell('◆','Planning &amp; Funding','Annual · Quarterly reviews','Milestone-gated · '+BP.guardrails.paybackMax+'y payback guardrail','#A100FF')}
+</div></div>`;}
 function scOM(){return `<span class="tag">Design Studio · Blueprint · Operating Model</span><div class="h1">Operating model</div><div class="sub">The full operating model — organization, capabilities, processes and governance. Everything writes to the shared model and cascades.</div>
 <div class="omtabs">${omBtn("capabilities","Capabilities")}${omBtn("organization","Organization")}${omBtn("processes","Processes")}<span style="flex:1"></span>${omBtn("governance","Governance")}</div>
-<div id="omBody">${omContent()}</div>${phases(2)}`;}
+<div id="omBody">${omContent()}</div>${scOMWoW()}${phases(2)}`;}
 function omBtn(k,l){return `<div class="omtab ${omTab===k?'on':''}" onclick="setOmTab('${k}')">${l}</div>`;}
 function setOmTab(k){omTab=k;render();}
 function omPost(){if(omTab==='capabilities')capsUI();if(omTab==='processes')procUI();}
@@ -4365,6 +4390,18 @@ input.sc-range-cur::-moz-range-thumb{
 }
 .fin-kpi-target .fk-l{color:#005C2E !important;font-weight:700 !important}
 .fin-kpi-target .fk-v{color:#007A3E !important}
+
+/* ── GOVERNANCE & WAYS OF WORKING section */
+.gwow-wrap{margin-top:24px;border-top:2px solid var(--line);padding-top:20px;padding-bottom:4px}
+.gwow-hdr{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.gwow-title{font-size:13px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.gwow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gwow-cell{background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 14px;transition:.15s}
+.gwow-cell:hover{border-color:rgba(161,0,255,.18);box-shadow:0 2px 8px rgba(161,0,255,.07)}
+.gwow-icon{font-size:13px;margin-bottom:6px;line-height:1}
+.gwow-lbl{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.gwow-val{font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:5px}
+.gwow-sub{font-size:10px;color:var(--muted);line-height:1.45}
 </style>
 
 </body>

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#17161B;--ink-2:#3A3A42;--muted:#7A7A85;--faint:#A8A8B2;--paper:#F7F6F3;--card:#FFFFFF;--line:#E7E5DF;--line-2:#EFEDE7;--rail:#16151A;--rail-2:#1F1E25;--rail-line:#2C2B33;--rail-txt:#B6B5C0;--purple:#A100FF;--purple-d:#7C19D6;--purple-bg:#F3EBFE;--teal:#0F9D71;--teal-d:#0F6E56;--teal-bg:#E4F5EE;--amber:#C98A1B;--red:#D14848;--shadow:0 1px 2px rgba(20,18,30,.04),0 8px 24px rgba(20,18,30,.06);}
+:root{--ink:#17161B;--ink-2:#3A3A42;--muted:#7A7A85;--faint:#A8A8B2;--paper:#F7F6F3;--card:#FFFFFF;--line:#E7E5DF;--line-2:#EFEDE7;--rail:#16151A;--rail-2:#1F1E25;--rail-line:#2C2B33;--rail-txt:#B6B5C0;--purple:#A100FF;--purple-d:#7500C0;--purple-bg:#F3EBFE;--teal:#0F9D71;--teal-d:#0F6E56;--teal-bg:#E4F5EE;--amber:#C98A1B;--red:#D14848;--shadow:0 1px 2px rgba(20,18,30,.04),0 8px 24px rgba(20,18,30,.06);}
 *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
 body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
 .mono{font-family:'JetBrains Mono',monospace;font-feature-settings:"tnum"}
@@ -139,11 +139,11 @@ body.client-mode .opt:not(.on){opacity:.5}
 .dccat{flex:0 0 124px;background:#4A0E7A;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;letter-spacing:.03em;text-align:center;padding:8px;line-height:1.2}
 .dcrows{flex:1;display:flex;flex-direction:column;gap:8px}
 .dcrow{display:flex;gap:8px;align-items:stretch}
-.dcname{flex:0 0 148px;background:#7C19D6;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:10.5px;padding:6px 8px;line-height:1.15}
+.dcname{flex:0 0 148px;background:#7500C0;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:10.5px;padding:6px 8px;line-height:1.15}
 .dcopts{flex:1;display:flex;gap:8px}
 .dcopt{flex:1;background:var(--purple-bg);border:1.5px solid transparent;border-radius:8px;padding:9px 6px;text-align:center;font-size:10.5px;color:var(--ink-2);cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1.15;transition:all .12s}
 .dcopt:hover{border-color:#C9A0F0}
-.dcopt.sel{background:#7C19D6;color:#fff;font-weight:700;border-color:#7C19D6}
+.dcopt.sel{background:#7500C0;color:#fff;font-weight:700;border-color:#7500C0}
 .cascbanner{background:linear-gradient(90deg,#F3EBFE,#EFE0FF);border:1px solid #E3CFFA;border-radius:11px;padding:11px 14px;margin-bottom:16px;display:flex;align-items:center;gap:9px;font-size:12px;flex-wrap:wrap;color:var(--ink-2)}
 .ddtable{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .ddcatrow td{padding:11px 14px 6px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--paper);border-top:2px solid var(--line)}
@@ -678,7 +678,7 @@ ame="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#17161B;--ink-2:#3A3A42;--muted:#7A7A85;--faint:#A8A8B2;--paper:#F7F6F3;--card:#FFFFFF;--line:#E7E5DF;--line-2:#EFEDE7;--rail:#16151A;--rail-2:#1F1E25;--rail-line:#2C2B33;--rail-txt:#B6B5C0;--purple:#A100FF;--purple-d:#7C19D6;--purple-bg:#F3EBFE;--teal:#0F9D71;--teal-d:#0F6E56;--teal-bg:#E4F5EE;--amber:#C98A1B;--red:#D14848;--shadow:0 1px 2px rgba(20,18,30,.04),0 8px 24px rgba(20,18,30,.06);}
+:root{--ink:#17161B;--ink-2:#3A3A42;--muted:#7A7A85;--faint:#A8A8B2;--paper:#F7F6F3;--card:#FFFFFF;--line:#E7E5DF;--line-2:#EFEDE7;--rail:#16151A;--rail-2:#1F1E25;--rail-line:#2C2B33;--rail-txt:#B6B5C0;--purple:#A100FF;--purple-d:#7500C0;--purple-bg:#F3EBFE;--teal:#0F9D71;--teal-d:#0F6E56;--teal-bg:#E4F5EE;--amber:#C98A1B;--red:#D14848;--shadow:0 1px 2px rgba(20,18,30,.04),0 8px 24px rgba(20,18,30,.06);}
 *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
 body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
 .mono{font-family:'JetBrains Mono',monospace;font-feature-settings:"tnum"}
@@ -809,11 +809,11 @@ body.client-mode .opt:not(.on){opacity:.5}
 .dccat{flex:0 0 124px;background:#4A0E7A;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;letter-spacing:.03em;text-align:center;padding:8px;line-height:1.2}
 .dcrows{flex:1;display:flex;flex-direction:column;gap:8px}
 .dcrow{display:flex;gap:8px;align-items:stretch}
-.dcname{flex:0 0 148px;background:#7C19D6;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:10.5px;padding:6px 8px;line-height:1.15}
+.dcname{flex:0 0 148px;background:#7500C0;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:10.5px;padding:6px 8px;line-height:1.15}
 .dcopts{flex:1;display:flex;gap:8px}
 .dcopt{flex:1;background:var(--purple-bg);border:1.5px solid transparent;border-radius:8px;padding:9px 6px;text-align:center;font-size:10.5px;color:var(--ink-2);cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1.15;transition:all .12s}
 .dcopt:hover{border-color:#C9A0F0}
-.dcopt.sel{background:#7C19D6;color:#fff;font-weight:700;border-color:#7C19D6}
+.dcopt.sel{background:#7500C0;color:#fff;font-weight:700;border-color:#7500C0}
 .cascbanner{background:linear-gradient(90deg,#F3EBFE,#EFE0FF);border:1px solid #E3CFFA;border-radius:11px;padding:11px 14px;margin-bottom:16px;display:flex;align-items:center;gap:9px;font-size:12px;flex-wrap:wrap;color:var(--ink-2)}
 .ddtable{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .ddcatrow td{padding:11px 14px 6px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--paper);border-top:2px solid var(--line)}
@@ -1317,7 +1317,7 @@ ame="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#17161B;--ink-2:#3A3A42;--muted:#7A7A85;--faint:#A8A8B2;--paper:#F7F6F3;--card:#FFFFFF;--line:#E7E5DF;--line-2:#EFEDE7;--rail:#16151A;--rail-2:#1F1E25;--rail-line:#2C2B33;--rail-txt:#B6B5C0;--purple:#A100FF;--purple-d:#7C19D6;--purple-bg:#F3EBFE;--teal:#0F9D71;--teal-d:#0F6E56;--teal-bg:#E4F5EE;--amber:#C98A1B;--red:#D14848;--shadow:0 1px 2px rgba(20,18,30,.04),0 8px 24px rgba(20,18,30,.06);}
+:root{--ink:#17161B;--ink-2:#3A3A42;--muted:#7A7A85;--faint:#A8A8B2;--paper:#F7F6F3;--card:#FFFFFF;--line:#E7E5DF;--line-2:#EFEDE7;--rail:#16151A;--rail-2:#1F1E25;--rail-line:#2C2B33;--rail-txt:#B6B5C0;--purple:#A100FF;--purple-d:#7500C0;--purple-bg:#F3EBFE;--teal:#0F9D71;--teal-d:#0F6E56;--teal-bg:#E4F5EE;--amber:#C98A1B;--red:#D14848;--shadow:0 1px 2px rgba(20,18,30,.04),0 8px 24px rgba(20,18,30,.06);}
 *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
 body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
 .mono{font-family:'JetBrains Mono',monospace;font-feature-settings:"tnum"}
@@ -1448,11 +1448,11 @@ body.client-mode .opt:not(.on){opacity:.5}
 .dccat{flex:0 0 124px;background:#4A0E7A;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;letter-spacing:.03em;text-align:center;padding:8px;line-height:1.2}
 .dcrows{flex:1;display:flex;flex-direction:column;gap:8px}
 .dcrow{display:flex;gap:8px;align-items:stretch}
-.dcname{flex:0 0 148px;background:#7C19D6;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:10.5px;padding:6px 8px;line-height:1.15}
+.dcname{flex:0 0 148px;background:#7500C0;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:10.5px;padding:6px 8px;line-height:1.15}
 .dcopts{flex:1;display:flex;gap:8px}
 .dcopt{flex:1;background:var(--purple-bg);border:1.5px solid transparent;border-radius:8px;padding:9px 6px;text-align:center;font-size:10.5px;color:var(--ink-2);cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1.15;transition:all .12s}
 .dcopt:hover{border-color:#C9A0F0}
-.dcopt.sel{background:#7C19D6;color:#fff;font-weight:700;border-color:#7C19D6}
+.dcopt.sel{background:#7500C0;color:#fff;font-weight:700;border-color:#7500C0}
 .cascbanner{background:linear-gradient(90deg,#F3EBFE,#EFE0FF);border:1px solid #E3CFFA;border-radius:11px;padding:11px 14px;margin-bottom:16px;display:flex;align-items:center;gap:9px;font-size:12px;flex-wrap:wrap;color:var(--ink-2)}
 .ddtable{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .ddcatrow td{padding:11px 14px 6px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--paper);border-top:2px solid var(--line)}
@@ -1951,7 +1951,7 @@ ame="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#17161B;--ink-2:#3A3A42;--muted:#7A7A85;--faint:#A8A8B2;--paper:#F7F6F3;--card:#FFFFFF;--line:#E7E5DF;--line-2:#EFEDE7;--rail:#16151A;--rail-2:#1F1E25;--rail-line:#2C2B33;--rail-txt:#B6B5C0;--purple:#A100FF;--purple-d:#7C19D6;--purple-bg:#F3EBFE;--teal:#0F9D71;--teal-d:#0F6E56;--teal-bg:#E4F5EE;--amber:#C98A1B;--red:#D14848;--shadow:0 1px 2px rgba(20,18,30,.04),0 8px 24px rgba(20,18,30,.06);}
+:root{--ink:#17161B;--ink-2:#3A3A42;--muted:#7A7A85;--faint:#A8A8B2;--paper:#F7F6F3;--card:#FFFFFF;--line:#E7E5DF;--line-2:#EFEDE7;--rail:#16151A;--rail-2:#1F1E25;--rail-line:#2C2B33;--rail-txt:#B6B5C0;--purple:#A100FF;--purple-d:#7500C0;--purple-bg:#F3EBFE;--teal:#0F9D71;--teal-d:#0F6E56;--teal-bg:#E4F5EE;--amber:#C98A1B;--red:#D14848;--shadow:0 1px 2px rgba(20,18,30,.04),0 8px 24px rgba(20,18,30,.06);}
 *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
 body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
 .mono{font-family:'JetBrains Mono',monospace;font-feature-settings:"tnum"}
@@ -2082,11 +2082,11 @@ body.client-mode .opt:not(.on){opacity:.5}
 .dccat{flex:0 0 124px;background:#4A0E7A;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;letter-spacing:.03em;text-align:center;padding:8px;line-height:1.2}
 .dcrows{flex:1;display:flex;flex-direction:column;gap:8px}
 .dcrow{display:flex;gap:8px;align-items:stretch}
-.dcname{flex:0 0 148px;background:#7C19D6;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:10.5px;padding:6px 8px;line-height:1.15}
+.dcname{flex:0 0 148px;background:#7500C0;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:10.5px;padding:6px 8px;line-height:1.15}
 .dcopts{flex:1;display:flex;gap:8px}
 .dcopt{flex:1;background:var(--purple-bg);border:1.5px solid transparent;border-radius:8px;padding:9px 6px;text-align:center;font-size:10.5px;color:var(--ink-2);cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1.15;transition:all .12s}
 .dcopt:hover{border-color:#C9A0F0}
-.dcopt.sel{background:#7C19D6;color:#fff;font-weight:700;border-color:#7C19D6}
+.dcopt.sel{background:#7500C0;color:#fff;font-weight:700;border-color:#7500C0}
 .cascbanner{background:linear-gradient(90deg,#F3EBFE,#EFE0FF);border:1px solid #E3CFFA;border-radius:11px;padding:11px 14px;margin-bottom:16px;display:flex;align-items:center;gap:9px;font-size:12px;flex-wrap:wrap;color:var(--ink-2)}
 .ddtable{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .ddcatrow td{padding:11px 14px 6px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--paper);border-top:2px solid var(--line)}
@@ -2802,7 +2802,7 @@ function scExecBlueprint(){const m=derive();const DC=BP.designChoices;const pick
  const gapsN=[...BP.architecture,...BP.infrastructure].filter(a=>a.status==='missing').length;
  // Decisions match the 4 Strategic Choice categories + Roadmap
  const decisions=[
-  {n:"Ambition",icon:"🎯",col:"#7C19D6",colBg:"#F3EBFE",colBd:"#E3CFFA",
+  {n:"Ambition",icon:"🎯",col:"#7500C0",colBg:"#F3EBFE",colBd:"#E3CFFA",
    v:pick("Role of Technology")+" · "+pick("Business-IT Relationship"),
    d:"The strategic direction for IT — how technology creates value for "+BP.meta.client+".",
    fields:[
@@ -2913,7 +2913,7 @@ function scExecBlueprint(){const m=derive();const DC=BP.designChoices;const pick
   });
 
   return `<span class="tag dl">Client Decision Hub</span>
-   <div class="h1">Client Decision Hub</div>
+   <div class="h1">Client decision hub</div>
    <div class="sub">${BP.meta.client} — five decisions that shape your technology transformation. Review each one, then approve or flag for discussion.</div>
    ${progressBar}
    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px">${decCards.slice(0,4).join('')}</div>
@@ -2956,7 +2956,7 @@ function scExecBlueprint(){const m=derive();const DC=BP.designChoices;const pick
   {n:"Architecture Board",d:"Re-platform & dispositions",st:BP.decisions.rePlatformCore?"Decision needed":"Informed",ok:!BP.decisions.rePlatformCore},
  ];
  const buildNow=100-m.runPct,buildBase=100-BP.baseline.runPct;
- return `<span class="tag">Design Studio · Client Decision Hub</span><div class="h1">Client Decision Hub</div><div class="sub">The five decisions the client needs to endorse — sourced to the live model, ready to socialise.</div>
+ return `<span class="tag">Design Studio · Client Decision Hub</span><div class="h1">Client decision hub</div><div class="sub">The five decisions the client needs to endorse — sourced to the live model, ready to socialise.</div>
  <div class="ebsec"><div class="ebsechead"><div>Five decisions to endorse <span style="text-transform:none;letter-spacing:0;font-weight:600;color:var(--muted)">— approved ${approved}/5${flagged?' · '+flagged+' flagged':''}</span></div><div class="bulk"><button class="capact on-a-h" onclick="approveAllDec()">✓ Approve all</button><button class="capact on-f-h" onclick="flagAllDec()">⚑ Flag all</button><button class="capact" onclick="clearAllDec()">Clear</button></div></div></div>
  <div class="grid g3" style="margin-bottom:18px">${decisions.map((d,i)=>{const s=signoff['dec'+i];return `<div class="card ebdec ${s==='approved'?'on-a':s==='flagged'?'on-f':''} ebclick" onclick="openDec(${i})"><div style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:18px">${d.icon}</span><div><div class="ebdt">${d.n}</div><div class="ebdv">${d.v}</div><div class="ebdd">${d.d}</div><span class="pill" style="color:var(--purple-d);background:var(--purple-bg);margin-top:8px;display:inline-block;font-size:10px">${d.tag}</span></div></div><div class="ebreview">${s==='approved'?'<span style="color:var(--teal-d)">✓ Approved</span> · ':s==='flagged'?'<span style="color:#92400E">⚑ Flagged</span> · ':''}Review & decide →</div></div>`;}).join('')}</div>
  <div class="grid g2">
@@ -3112,7 +3112,7 @@ function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
  const gOut=outP,rem=100-gOut,gHQ=Math.round(hi/100*rem),gReg=Math.round(near/100*rem),gGlob=rem-gHQ-gReg;
  const C_GLOB='#BBD2F2',C_REG='#4A82E8',C_HQ='#1B47C2',C_OUT='#8E8E97';
  const totL2=BP.capabilities.reduce((s,c)=>s+c.l2.length,0);
- const orgCard=`<div class="bpc" id="sec-org">${bh('#7A1FFF','&#9683;','Organization model','')}<div class="bpc-b">
+ const orgCard=`<div class="bpc" id="sec-org">${bh('#7500C0','&#9683;','Organization model','')}<div class="bpc-b">
   <div class="bparch" style="cursor:pointer" onclick="openArche()" title="Click to compare archetypes"><span class="al">Operating Model Archetype</span><span class="av">${BP.omType}</span><span style="margin-left:auto;font-size:10px;color:var(--purple-d)">change →</span></div>
   ${orgChartSimple()}
   ${edit('om','organization','Open organization')}</div></div>`;
@@ -3183,7 +3183,7 @@ function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
  const gaps=BP.architecture.filter(a=>a.status==='missing').length+BP.infrastructure.filter(a=>a.status==='missing').length;
  const redund=BP.architecture.filter(a=>a.apps>=4).length;
  const remTot=BP.architecture.reduce((s,a)=>s+a.rem,0)+BP.infrastructure.reduce((s,a)=>s+a.rem,0);
- const techCard=`<div class="bpc" id="sec-tech">${bh('#4B3FD8','&#9706;','Tech architecture','88% · ETB')}<div class="bpc-b"><div class="bpc-cap">Reference architecture (ETB) heat map</div><div class="bpheat">${archCells}</div><div class="bplgd" style="margin-top:9px">${ARCH_C.map((c,i)=>`<span><b style="background:${c}"></b>${ARCH_L[i]}</span>`).join('')}</div>
+ const techCard=`<div class="bpc" id="sec-tech">${bh('#7500C0','&#9706;','Tech architecture','88% · ETB')}<div class="bpc-b"><div class="bpc-cap">Reference architecture (ETB) heat map</div><div class="bpheat">${archCells}</div><div class="bplgd" style="margin-top:9px">${ARCH_C.map((c,i)=>`<span><b style="background:${c}"></b>${ARCH_L[i]}</span>`).join('')}</div>
   <div class="bpsub">Maturity &middot; redundancy &middot; cost to remediate</div>
   ${br('Modernization (apps / infra)',`${modAvg}% / ${infraAvg}%`)}
   ${br('Tech-debt index',`<b>${m.techDebt}</b>`)}
@@ -3215,7 +3215,7 @@ function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
  const RUNC='#5B5B6B',GROWC='#0891B2',TXC='#A100FF';
  const stk=(lbl,r,g,t,total)=>{const p=v=>Math.round(v/total*100);return `<div class="bpstk"><span class="sl2">${lbl}</span><div class="bpsplit"><i style="width:${p(r)}%;background:${RUNC}">${p(r)>14?fmtM(r):''}</i><i style="width:${p(g)}%;background:${GROWC}">${p(g)>14?fmtM(g):''}</i><i style="width:${p(t)}%;background:${TXC}">${p(t)>14?fmtM(t):''}</i></div></div>`;};
   const fiveYrNet=m.fiveYr!=null?fmtM(m.fiveYr):'—';
- const finCard=`<div class="bpc" id="sec-fin" style="margin-bottom:16px">${bh('#5B00B5','&#9670;','Financials','95% · fin model')}<div class="bpc-b">
+ const finCard=`<div class="bpc" id="sec-fin" style="margin-bottom:16px">${bh('#460073','&#9670;','Financials','95% · fin model')}<div class="bpc-b">
   <div style="display:grid;grid-template-columns:3fr 1fr;gap:14px;align-items:center">
    <div>
     <div class="bpsub" style="margin-top:0">Current → target: IT spend shift</div>
@@ -3232,8 +3232,8 @@ function scBlueprint(){const m=derive();const asis=BP.mode==='asis';
   </div>
  </div></div>`;
  return `<span class="tag">Design Studio · Technology Reinvention Summary</span><div class="h1">Technology Reinvention Summary</div><div class="sub">All domains on one model \u2014 change anything in a module and it cascades here, live.</div>
-<div class="bp-index" id="bpIndex"><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-strategic');return false" data-sec="sec-strategic" style="--c:#A100FF"><span class="bp-idx-dot"></span>Strategic Choices</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-fin');return false" data-sec="sec-fin" style="--c:#5B00B5"><span class="bp-idx-dot"></span>Financials</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-org');return false" data-sec="sec-org" style="--c:#7A1FFF"><span class="bp-idx-dot"></span>Organization</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('bp-cap-card');return false" data-sec="bp-cap-card" style="--c:#8A00E6"><span class="bp-idx-dot"></span>Capabilities</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-proc');return false" data-sec="sec-proc" style="--c:#3B0A75"><span class="bp-idx-dot"></span>Processes</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-tech');return false" data-sec="sec-tech" style="--c:#4B3FD8"><span class="bp-idx-dot"></span>Tech Architecture</a></div>
- <div id="sec-strategic" class="sc-card"><div class="sc-header"><div class="sc-title">&#127919; Strategic Choices <span class="sc-sub">Tap any choice to explore how it changes the plan — everything updates live. Approve a scenario to share with your Accenture team.</span></div></div><div id="scCardInner">${buildSCGrid()}${buildScenarioBar()}</div></div>
+<div class="bp-index" id="bpIndex"><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-strategic');return false" data-sec="sec-strategic" style="--c:#A100FF"><span class="bp-idx-dot"></span>Strategic Choices</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-fin');return false" data-sec="sec-fin" style="--c:#460073"><span class="bp-idx-dot"></span>Financials</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-org');return false" data-sec="sec-org" style="--c:#7500C0"><span class="bp-idx-dot"></span>Organization</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('bp-cap-card');return false" data-sec="bp-cap-card" style="--c:#A100FF"><span class="bp-idx-dot"></span>Capabilities</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-proc');return false" data-sec="sec-proc" style="--c:#460073"><span class="bp-idx-dot"></span>Processes</a><span class="bp-idx-sep">·</span><a class="bp-idx-item" href="#" onclick="bpIdxScroll('sec-tech');return false" data-sec="sec-tech" style="--c:#7500C0"><span class="bp-idx-dot"></span>Tech Architecture</a></div>
+ <div id="sec-strategic" class="sc-card"><div class="sc-header"><div class="sc-title">&#127919; Strategic choices <span class="sc-sub">Tap any choice to explore how it changes the plan — everything updates live. Approve a scenario to share with your Accenture team.</span></div></div><div id="scCardInner">${buildSCGrid()}${buildScenarioBar()}</div></div>
 ${finCard}
 <div class="grid g2">${orgCard}${capCard}${procCard}${techCard}${govCard}</div>${phases(2)}`;}
 
@@ -3302,11 +3302,11 @@ function scOMWoW(){
   return `<div class="gwow-wrap">
 <div class="gwow-hdr"><span class="gwow-title">Governance &amp; Ways of Working</span><span class="chip ai" style="font-size:9px;margin-left:auto"><span class="d"></span>Shaped by Strategic Choices</span></div>
 <div class="gwow-grid">
-${cell('⬡','Governance model',gm,govBrief,'#7A1FFF')}
-${cell('◈','Decision rights',decOwner,decBrief,'#5B00B5')}
-${cell('▶','Delivery model',delivery,'How investment is executed and shipped','#4B3FD8')}
-${cell('⬢','Team model',teamShort,teamMod,'#8A00E6')}
-${cell('◉','Agile &amp; Product',agileShort,agile,'#3B0A75')}
+${cell('⬡','Governance model',gm,govBrief,'#7500C0')}
+${cell('◈','Decision rights',decOwner,decBrief,'#460073')}
+${cell('▶','Delivery model',delivery,'How investment is executed and shipped','#7500C0')}
+${cell('⬢','Team model',teamShort,teamMod,'#A100FF')}
+${cell('◉','Agile &amp; Product',agileShort,agile,'#460073')}
 ${cell('◆','Planning &amp; Funding','Annual · Quarterly reviews','Milestone-gated · '+BP.guardrails.paybackMax+'y payback guardrail','#A100FF')}
 </div></div>`;}
 function scOM(){return `<span class="tag">Design Studio · Blueprint · Operating Model</span><div class="h1">Operating model</div><div class="sub">The full operating model — organization, capabilities, processes and governance. Everything writes to the shared model and cascades.</div>
@@ -3366,7 +3366,7 @@ function orgViewContent(m){const dc=BP.designChoices||{};const pick=k=>dc[k]?dc[
   const govDesc={Centralized:'A central technology function holds decision rights and standards — consistent and controlled, but slower to respond.',Federated:'Standards and guardrails set centrally; delivery decisions devolved to domains and products — balancing control with speed.',Distributed:'Domains and product teams own most decisions with light central guardrails — fast and autonomous, with more duplication.'}[gm];
   const bodies=[['Transformation Steering Board','Investment, scope & guardrail decisions','Monthly · stage-gated','CEO · CFO · CIO · TO Lead'],['Architecture Review Board','Standards, dispositions & exceptions','Bi-weekly','Chief Architect · domain leads'],['Value Assurance Office','Benefit tracking & guardrail compliance','Monthly','CFO office · PMO · Value lead'],['Product / Platform Councils','Backlog, prioritisation & roadmaps','Bi-weekly','Product VPs · business owners']];
   const bodyCards=bodies.map(b=>`<div class="gbody"><div style="font-weight:700;font-size:12.5px;color:var(--ink)">${b[0]}</div><div style="font-size:11px;color:var(--muted);margin:4px 0 9px">${b[1]}</div><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="chip src" style="font-size:9.5px"><span class="d"></span>${b[2]}</span><span class="chip ai" style="font-size:9.5px"><span class="d"></span>${b[3]}</span></div></div>`).join('');
-  const rbc={A:'#7C19D6',R:'#0F9D71',C:'#C98A1B',I:'#8E8E97'};const rb=l=>`<span class="rb" style="background:${rbc[l]}22;color:${rbc[l]}">${l}</span>`;
+  const rbc={A:'#7500C0',R:'#0F9D71',C:'#C98A1B',I:'#8E8E97'};const rb=l=>`<span class="rb" style="background:${rbc[l]}22;color:${rbc[l]}">${l}</span>`;
   const actors=['Board','CIO','ARB','Product Council','Business'];
   const rr=[['Investment & funding',['A','R','C','I','C']],['Architecture standards',['I','A','R','C','I']],['Sourcing & vendors',['A','R','C','I','C']],['Hiring & org design',['I','A','I','C','C']],['Product go-live',['I','C','C','A','R']]];
   const raci=`<table class="raci"><thead><tr><th>Decision</th>${actors.map(a=>`<th>${a}</th>`).join('')}</tr></thead><tbody>${rr.map(r=>`<tr><td>${r[0]}</td>${r[1].map(l=>`<td>${rb(l)}</td>`).join('')}</tr>`).join('')}</tbody></table><div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:9px;font-size:10px;color:var(--muted)"><span>${rb('A')} Accountable</span><span>${rb('R')} Responsible</span><span>${rb('C')} Consulted</span><span>${rb('I')} Informed</span></div>`;
@@ -3750,7 +3750,7 @@ function scTwin(){const cpf=0.12;
 
 /* --- DELIVERY CONSOLE --- */
 function scCommand(){const m=derive();const retire=BP.applications.filter(a=>a.disp==='Retire').length;const mig=BP.applications.filter(a=>a.disp==='Migrate').length;const n=committed().length;
- return `<span class="tag dl">Delivery Console · Value Case, Roadmap &amp; Socialization</span><div class="h1">Command Center</div><div class="sub">Executive hub — the integrated blueprint consolidated for the board, ready to socialize and hand to delivery.</div>
+ return `<span class="tag dl">Delivery Console · Value Case, Roadmap &amp; Socialization</span><div class="h1">Command center</div><div class="sub">Executive hub — the integrated blueprint consolidated for the board, ready to socialize and hand to delivery.</div>
 <div class="kpis">${kpi("5-yr net",null,(m.fiveYr!=null?fmtM(m.fiveYr):"—"))}${kpi("Payback","pb",(m.payback||"—")+" <small>y</small>")}${kpi("Annual savings","op",fmtM(m.savings))}${kpi("Maturity","cm",m.cmm+" <small>/5</small>")}${kpi("Tech-debt","td",m.techDebt)}</div>
 <div class="grid g3">
  <div class="card"><h3>Operating model <span class="chip src"><span class="d"></span>92% · TOM CMM</span></h3><div class="rows"><div class="row"><div class="nm" style="font-size:12px">Product-led · span 1:10</div></div><div class="row"><div class="nm" style="font-size:12px">Workforce</div><div class="meta mono">${m.fte.toLocaleString()} FTE</div></div><div class="row"><div class="nm" style="font-size:12px">Maturity</div><div class="meta mono">${m.cmm}/5</div></div></div></div>
@@ -3802,7 +3802,7 @@ function capInsights(){const cs=BP.capabilities;
  const low=cs.filter(c=>c.tgt<3.4).map(c=>c.short);
  const gapC=[...cs].sort((a,b)=>(b.tgt-b.cur)-(a.tgt-a.cur))[0];const gap=(gapC.tgt-gapC.cur).toFixed(1);
  const outHi=cs.filter(c=>c.sourcing==='Outsourced'&&c.tgt>=3.6).map(c=>c.short);
- const ins=[['#D14848','Low target maturity',low.length?low.join(', '):'all domains at or above 3.4'],['#7C19D6','Biggest uplift needed',`${gapC.short} — +${gap} pts to target`],['#C98A1B','Sourcing watch',outHi.length?`${outHi.join(', ')} outsourced yet targeted high maturity`:'sourcing broadly aligned to maturity']];
+ const ins=[['#D14848','Low target maturity',low.length?low.join(', '):'all domains at or above 3.4'],['#7500C0','Biggest uplift needed',`${gapC.short} — +${gap} pts to target`],['#C98A1B','Sourcing watch',outHi.length?`${outHi.join(', ')} outsourced yet targeted high maturity`:'sourcing broadly aligned to maturity']];
  const take=`Invest first where maturity is lowest and the uplift is largest — ${gapC.short}.`;
  return `<div class="rows" style="gap:0">${ins.map(i=>`<div class="insrow"><span class="vdot" style="background:${i[0]}"></span><div><div class="int">${i[1]}</div><div class="ind">${i[2]}</div></div></div>`).join('')}</div><div class="takeaway">👉 ${take}</div>`;}
 function capsUI(){const el=document.getElementById('caps');if(!el)return;el.innerHTML=BP.capabilities.map((c,i)=>{const v=BP.mode==='asis'?c.cur:c.tgt;const pct=(v-1)/4*100;const col=v>=3.8?'#0F9D71':v>=3.0?'#C98A1B':'#D14848';return `<div class="heatrow caprowsel ${i===capSel?'on':''}" style="grid-template-columns:150px 1fr auto;cursor:pointer" onclick="setCapSel(${i})"><div class="rl" style="font-size:11px;line-height:1.15">${c.short||c.name}</div><div class="cellbar"><i style="width:${pct}%;background:${col}"></i></div><div class="step"><button onclick="event.stopPropagation();capAdj(${i},-0.2)">−</button><span class="v mono">${v.toFixed(1)}</span><button onclick="event.stopPropagation();capAdj(${i},0.2)">+</button></div></div>`;}).join('');}
@@ -3966,7 +3966,7 @@ function approveSim(){
   toast('\u2713 Scenario approved \u2014 shared with your Accenture team');
 }
 var SC_CATS=[
-  {lbl:'Ambition',icon:'🎯',col:'#7C19D6',keys:['Role of Technology','Business-IT Relationship']},
+  {lbl:'Ambition',icon:'🎯',col:'#7500C0',keys:['Role of Technology','Business-IT Relationship']},
   {lbl:'Financials',icon:'◆',col:'#C98A1B',keys:['Budgeting Model','Funding Source']},
   {lbl:'Operating Model',icon:'⬡',col:'#460073',keys:['Organizational Structure','Team Structure','Governance']},
   {lbl:'Technology',icon:'⬢',col:'#0F6E56',keys:['Architecture','Application Model','Technology Model']},
